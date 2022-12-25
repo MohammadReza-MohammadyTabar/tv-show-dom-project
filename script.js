@@ -1,14 +1,12 @@
+//define global variable for response data
 let d;
+//making get request by axios
 const getShow = async () => {
-  //https://api.tvmaze.com/shows/5/episodes
-  const response = await axios.get("episodes.json");
-
-  // const data = await response.json();
+  const response = await axios.get("https://api.tvmaze.com/shows/5/episodes");
   d = await response.data.map((x) => x);
-  // console.log(d);
   return response.data;
 };
-
+//error handeling
 getShow()
   .then((data) => {
     optionElement(data);
@@ -17,11 +15,11 @@ getShow()
   .catch((err) => {
     console.log("rejected", err);
   });
-
+//selecting element of html
 const select = document.querySelector("#selector");
 const serach = document.querySelector(".search");
 const container = document.querySelector(".container");
-
+//adding options to select element
 const optionElement = (episodesList) => {
   const option = document.createElement("option");
   option.append(`All Episods`);
@@ -36,12 +34,14 @@ const optionElement = (episodesList) => {
 // const randomColorNumber = () => {
 //   return Math.floor(Math.random() * 256);
 // };
+//define showcard function for create cards
 const showsCard = (data) => {
   console.log(data);
   data.forEach((episod) => {
     createCard(episod);
   });
 };
+// define createCard for makeing each card
 const createCard = (episod) => {
   const div = document.createElement("div");
   const h3 = document.createElement("h3");
@@ -70,7 +70,7 @@ function ordinal(n) {
   var v = n % 100;
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
-
+// event for selector menue
 select.addEventListener("change", function (e) {
   if (e.target.value === "All Episods") {
     container.innerHTML = "";
@@ -81,7 +81,7 @@ select.addEventListener("change", function (e) {
     createCard(d[e.target.selectedIndex - 1]);
   }
 });
-
+//event for input search
 serach.addEventListener("input", async (e) => {
   console.log(e.target.value);
   container.innerHTML = "";
