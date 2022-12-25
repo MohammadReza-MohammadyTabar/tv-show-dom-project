@@ -72,15 +72,22 @@ function ordinal(n) {
 }
 
 select.addEventListener("change", function (e) {
-  console.log(e.target.value);
-  console.log(e);
   if (e.target.value === "All Episods") {
     container.innerHTML = "";
     showsCard(d);
   } else {
     container.innerHTML = "";
-    console.log(d[e.target.selectedIndex - 1]);
 
     createCard(d[e.target.selectedIndex - 1]);
   }
+});
+
+serach.addEventListener("input", async (e) => {
+  console.log(e.target.value);
+  container.innerHTML = "";
+  d.forEach((ele) => {
+    if (ele.name.toLowerCase().includes(e.target.value.toLowerCase())) {
+      createCard(ele);
+    }
+  });
 });

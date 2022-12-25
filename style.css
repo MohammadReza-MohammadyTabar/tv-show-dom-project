@@ -15,7 +15,7 @@ main {
   display: flex;
   flex-flow: row-reverse wrap;
   /* justify-content: center; */
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 span,
