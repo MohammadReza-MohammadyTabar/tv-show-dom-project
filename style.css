@@ -14,6 +14,7 @@ main {
   width: 90%;
   display: flex;
   flex-flow: row-reverse wrap;
+  /* justify-content: center; */
   justify-content: space-between;
 }
 
@@ -26,11 +27,17 @@ span {
 }
 .container div {
   padding: 10px;
-  width: 250px;
-  height: 520px;
-  border: solid 3px;
+  width: 350px;
+  height: 350px;
+  border: solid 1px;
+  box-shadow: 10px 10px 10px 5px gray;
   border-radius: 10px;
   margin-top: 50px;
+}
+.container div p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .container div h3 {
   width: 250;
