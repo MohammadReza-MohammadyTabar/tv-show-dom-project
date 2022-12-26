@@ -81,6 +81,7 @@ select.addEventListener("change", function (e) {
     createCard(d[e.target.selectedIndex - 1]);
   }
 });
+
 //event for input search
 serach.addEventListener("input", async (e) => {
   console.log(e.target.value);
