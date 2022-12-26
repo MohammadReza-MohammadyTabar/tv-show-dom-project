@@ -36,7 +36,6 @@ const optionElement = (episodesList) => {
 // };
 //define showcard function for create cards
 const showsCard = (data) => {
-  console.log(data);
   data.forEach((episod) => {
     createCard(episod);
   });
@@ -84,7 +83,6 @@ select.addEventListener("change", function (e) {
 
 //event for input search
 serach.addEventListener("input", async (e) => {
-  console.log(e.target.value);
   container.innerHTML = "";
   d.forEach((ele) => {
     if (ele.name.toLowerCase().includes(e.target.value.toLowerCase())) {

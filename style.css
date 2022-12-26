@@ -1,5 +1,10 @@
+body {
+  background-color: #dad7cd;
+}
 .header {
   text-align: center;
+  color: #f1faee;
+  background-color: #354f52;
 }
 main {
   text-align: center;
@@ -33,6 +38,7 @@ span {
   box-shadow: 10px 10px 10px 5px gray;
   border-radius: 10px;
   margin-top: 50px;
+  background-color: #84a98c;
 }
 .container div p {
   white-space: nowrap;
