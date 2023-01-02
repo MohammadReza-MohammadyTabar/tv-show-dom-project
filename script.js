@@ -82,7 +82,7 @@ select.addEventListener("change", function (e) {
 });
 let count;
 //event for input search
-serach.addEventListener("input", async (e) => {
+serach.addEventListener("input", async function (e) {
   container.innerHTML = "";
   count = 0;
   d.forEach((ele) => {
@@ -92,7 +92,11 @@ serach.addEventListener("input", async (e) => {
       createCard(ele);
     }
   });
+
   document.querySelector(
     ".counter"
   ).textContent = `Episodes matches search: ${count}`;
+  if (e.target.value === "") {
+    document.querySelector(".counter").textContent = "";
+  }
 });
