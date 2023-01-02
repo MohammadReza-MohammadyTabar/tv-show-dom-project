@@ -10,7 +10,8 @@ main {
   text-align: center;
 }
 .search,
-.selector {
+.selecto,
+.counter {
   display: inline-block;
 }
 .container {

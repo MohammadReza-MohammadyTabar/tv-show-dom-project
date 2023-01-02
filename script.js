@@ -80,13 +80,19 @@ select.addEventListener("change", function (e) {
     createCard(d[e.target.selectedIndex - 1]);
   }
 });
-
+let count;
 //event for input search
 serach.addEventListener("input", async (e) => {
   container.innerHTML = "";
+  count = 0;
   d.forEach((ele) => {
     if (ele.name.toLowerCase().includes(e.target.value.toLowerCase())) {
+      count++;
+
       createCard(ele);
     }
   });
+  document.querySelector(
+    ".counter"
+  ).textContent = `Episodes matches search: ${count}`;
 });
