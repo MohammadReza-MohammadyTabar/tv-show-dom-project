@@ -107,7 +107,9 @@ const createCard = async (cardData, isShowCard) => {
         console.log("rejected", err);
       });
   });
-  img.src = cardData.image.medium;
+  cardData.image !== null
+    ? (img.src = cardData.image.medium)
+    : (img.src = "default.jpg");
   img.style.borderRadius = "5px";
   if (isShowCard == false) {
     select.style.display = "inline-block";
