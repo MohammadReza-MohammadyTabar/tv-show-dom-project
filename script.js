@@ -155,13 +155,21 @@ select.addEventListener("change", function (e) {
     createCard(episodesData[e.target.selectedIndex - 1], false);
   }
 });
-
+let count;
 //event for input search
 serach.addEventListener("input", async (e) => {
   container.innerHTML = "";
+  count=0;
   episodesData.forEach((ele) => {
     if (ele.name.toLowerCase().includes(e.target.value.toLowerCase())) {
+      count++;
       createCard(ele, false);
     }
   });
+  document.querySelector(
+    ".counter"
+  ).textContent = `Episodes matches search: ${count}`;
+  if (e.target.value === "") {
+    document.querySelector(".counter").textContent = "";
+  }
 });

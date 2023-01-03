@@ -11,7 +11,8 @@ main {
 }
 .search,
 .selector,
-#allshows {
+#allshows,
+.counter {
   display: inline-block;
 }
 .container {
